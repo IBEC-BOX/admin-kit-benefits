@@ -16,7 +16,7 @@ class CachedBenefitRepository implements BenefitRepositoryInterface
     {
         $locale = app()->getLocale();
 
-        return Cache::remember("ak_benefit_$locale", config('admin-kit.cache.ttl'), function () use ($locale) {
+        return Cache::remember("ak_benefit_$locale", config('admin-kit.cache.ttl'), function () {
             return $this->repository->getApiList();
         });
     }
