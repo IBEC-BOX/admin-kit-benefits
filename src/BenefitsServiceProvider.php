@@ -4,6 +4,8 @@ namespace AdminKit\Benefits;
 
 use AdminKit\Benefits\Commands\InstallCommand;
 use AdminKit\Benefits\Providers\RouteServiceProvider;
+use AdminKit\Benefits\UI\API\Repositories\BenefitRepositoryInterface;
+use AdminKit\Benefits\UI\API\Repositories\CachedBenefitRepository;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -28,5 +30,10 @@ class BenefitsServiceProvider extends PackageServiceProvider
     public function registeringPackage()
     {
         $this->app->register(RouteServiceProvider::class);
+    }
+
+    public function bootingPackage()
+    {
+        $this->app->bind(BenefitRepositoryInterface::class, CachedBenefitRepository::class);
     }
 }
