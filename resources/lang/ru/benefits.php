@@ -2,11 +2,14 @@
 
 return [
     'resource' => [
-        'label' => 'Benefit',
-        'plural_label' => 'Benefits',
+        'label' => 'Преимущество',
+        'plural_label' => 'Преимущества',
 
         'id' => 'ID',
-        'title' => 'Title',
+        'title' => 'Заголовок',
+        'description' => 'Описание',
+        'icon' => 'Иконка',
+        'sort' => 'Порядок',
 
         'created_at' => 'Создан',
         'updated_at' => 'Обновлен',

@@ -19,11 +19,19 @@ class BenefitResource extends Resource
     {
         return $form
             ->schema([
-                TranslatableTabs::make(fn ($locale) => Forms\Components\Tabs\Tab::make($locale)->schema([
-                    Forms\Components\TextInput::make('title')
+                Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
+                    ->label(__('admin-kit-benefits::benefits.resource.icon').' (SVG)')
+                    ->collection('icon')
+                    ->editableSvgs()
+                    ->acceptedFileTypes(['image/svg', 'image/svg+xml'])
+                    ->required(),
+                TranslatableTabs::make(fn ($locale) => [
+                    Forms\Components\TextInput::make("title.$locale")
                         ->label(__('admin-kit-benefits::benefits.resource.title'))
                         ->required($locale === app()->getLocale()),
-                ])),
+                    Forms\Components\Textarea::make("description.$locale")
+                        ->label(__('admin-kit-benefits::benefits.resource.description')),
+                ]),
             ])
             ->columns(1);
     }
@@ -32,15 +40,18 @@ class BenefitResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')
-                    ->label(__('admin-kit-benefits::benefits.resource.id'))
-                    ->sortable(),
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('icon')
+                    ->label(__('admin-kit-benefits::benefits.resource.icon'))
+                    ->collection('icon')
+                    ->width(160)
+                    ->height(90),
                 Tables\Columns\TextColumn::make('title')
                     ->label(__('admin-kit-benefits::benefits.resource.title')),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label(__('admin-kit-benefits::benefits.resource.created_at')),
+                Tables\Columns\TextColumn::make('sort')
+                    ->label(__('admin-kit-benefits::benefits.resource.sort'))
+                    ->sortable()
+                    ->toggleable(),
             ])
-            ->defaultSort('id', 'desc')
             ->filters([
                 //
             ])
@@ -51,7 +62,8 @@ class BenefitResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
             ])
-            ->defaultSort('id', 'desc');
+            ->defaultSort('sort')
+            ->reorderable('sort');
     }
 
     public static function getRelations(): array

@@ -11,8 +11,10 @@ return new class extends Migration
         Schema::create('admin_kit_benefits', function (Blueprint $table) {
             $table->id();
 
-            // add fields
-            $table->jsonb('title')->default('{}');
+            $table->json('title');
+            $table->json('description')->nullable();
+            $table->integer('sort')->nullable();
+            // icon is a spatie/media-library model
 
             $table->timestamps();
         });

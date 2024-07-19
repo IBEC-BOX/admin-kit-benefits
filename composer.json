@@ -41,7 +41,8 @@
     "autoload": {
         "psr-4": {
             "AdminKit\\Benefits\\": "src/",
-            "AdminKit\\Benefits\\Database\\Factories\\": "database/factories/"
+            "AdminKit\\Benefits\\Database\\Factories\\": "database/factories",
+            "AdminKit\\Benefits\\Database\\Seeders\\": "database/seeders"
         }
     },
     "autoload-dev": {

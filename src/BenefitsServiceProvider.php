@@ -2,7 +2,7 @@
 
 namespace AdminKit\Benefits;
 
-use AdminKit\Benefits\Commands\BenefitsCommand;
+use AdminKit\Benefits\Commands\InstallCommand;
 use AdminKit\Benefits\Providers\RouteServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -22,7 +22,7 @@ class BenefitsServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasTranslations()
             ->hasMigration('create_admin_kit_benefits_table')
-            ->hasCommand(BenefitsCommand::class);
+            ->hasCommand(InstallCommand::class);
     }
 
     public function registeringPackage()
