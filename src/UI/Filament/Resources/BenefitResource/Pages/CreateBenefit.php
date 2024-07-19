@@ -2,8 +2,8 @@
 
 namespace AdminKit\Benefits\UI\Filament\Resources\BenefitResource\Pages;
 
-use Filament\Resources\Pages\CreateRecord;
 use AdminKit\Benefits\UI\Filament\Resources\BenefitResource;
+use Filament\Resources\Pages\CreateRecord;
 
 class CreateBenefit extends CreateRecord
 {

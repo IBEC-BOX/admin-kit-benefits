@@ -2,8 +2,8 @@
 
 namespace AdminKit\Benefits\Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use AdminKit\Benefits\Models\Benefit;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BenefitFactory extends Factory
 {

@@ -2,10 +2,10 @@
 
 namespace AdminKit\Benefits;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use AdminKit\Benefits\Commands\BenefitsCommand;
 use AdminKit\Benefits\Providers\RouteServiceProvider;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class BenefitsServiceProvider extends PackageServiceProvider
 {

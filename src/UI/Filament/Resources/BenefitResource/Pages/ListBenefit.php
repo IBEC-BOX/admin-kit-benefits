@@ -2,9 +2,9 @@
 
 namespace AdminKit\Benefits\UI\Filament\Resources\BenefitResource\Pages;
 
+use AdminKit\Benefits\UI\Filament\Resources\BenefitResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use AdminKit\Benefits\UI\Filament\Resources\BenefitResource;
 
 class ListBenefit extends ListRecords
 {

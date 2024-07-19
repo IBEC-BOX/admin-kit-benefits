@@ -2,10 +2,10 @@
 
 namespace AdminKit\Benefits\Models;
 
+use AdminKit\Benefits\Database\Factories\BenefitFactory;
 use AdminKit\Core\Abstracts\Models\AbstractModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Translatable\HasTranslations;
-use AdminKit\Benefits\Database\Factories\BenefitFactory;
 
 class Benefit extends AbstractModel
 {

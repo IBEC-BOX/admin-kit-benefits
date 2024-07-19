@@ -2,9 +2,9 @@
 
 namespace AdminKit\Benefits;
 
+use AdminKit\Benefits\UI\Filament\Resources\BenefitResource;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
-use AdminKit\Benefits\UI\Filament\Resources\BenefitResource;
 
 class FilamentPlugin implements Plugin
 {

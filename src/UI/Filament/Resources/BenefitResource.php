@@ -2,12 +2,12 @@
 
 namespace AdminKit\Benefits\UI\Filament\Resources;
 
+use AdminKit\Benefits\Models\Benefit;
+use AdminKit\Benefits\UI\Filament\Resources\BenefitResource\Pages;
 use AdminKit\Core\Forms\Components\TranslatableTabs;
 use Filament\Forms;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use AdminKit\Benefits\Models\Benefit;
-use AdminKit\Benefits\UI\Filament\Resources\BenefitResource\Pages;
 
 class BenefitResource extends Resource
 {
